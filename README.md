@@ -12,7 +12,7 @@ It takes the implementation from the standard library and replaced 32-bit by 64-
    ```yaml
    dependencies:
      big-types:
-       github: your-github-user/big-types
+       github: philipp-classen/big-types.cr
    ```
 
 2. Run `shards install`
@@ -21,17 +21,34 @@ It takes the implementation from the standard library and replaced 32-bit by 64-
 
 ```crystal
 require "big-types"
+
+x = BigArray(Int8).new
+4_000_000_000.times { x << 0 }
 ```
 
-TODO: Write usage instructions here
+Note that the equivalent program with `Array` would overflow:
+
+```crystal
+x = Array(Int8).new
+4_000_000_000.times { x << 0 }
+
+Unhandled exception: Arithmetic overflow (OverflowError)
+  from /usr/lib/crystal/int.cr:568:7 in '__crystal_main'
+  from /usr/lib/crystal/crystal/main.cr:118:5 in 'main'
+  from /usr/lib/libc.so.6 in '??'
+  from /usr/lib/libc.so.6 in '__libc_start_main'
+  from /tmp/phil-crystal-cache-dir/crystal-run-overflow.tmp in '_start'
+  from ???
+```
 
 ## Development
 
-TODO: Write development instructions here
+The code base should stay as close as possible to the implementation in the
+Crystal standard library.
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/big-types/fork>)
+1. Fork it (<https://github.com/philipp-classen/big-types/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -39,4 +56,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [Philipp Claßen](https://github.com/your-github-user) - creator and maintainer
+- [Philipp Claßen](https://github.com/philipp-classen) - creator and maintainer
