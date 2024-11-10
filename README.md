@@ -10,7 +10,7 @@ require "big-types"
 
 x = BigArray(Int32).new         # like Array(Int32).new
 y = BigSet(Int32).new           # like Set(Int32).new
-z = BigHash(Int32, Int32).new   # like Hash(Int32).new
+z = BigHash(Int32, Int32).new   # like Hash(Int32, Int32).new
 ```
 
 ## Installation
