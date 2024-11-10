@@ -1,9 +1,9 @@
 # big-types
 
-Provides data structures that are drop-in replacements for Array, Hash, and Set.
-In contrast to the standard types, there it supports sizes that exceed 32-bit indicies.
+Provides data structures that serve as drop-in replacements for Array, Hash, and Set.
+Unlike the standard types, these structures support sizes that exceed 32-bit indices.
 
-It takes the implementation from the standard library and replaced 32-bit by 64-bit integers.
+The implementation is based on the standard library, with 32-bit integers replaced by 64-bit integers.
 
 ## Installation
 
@@ -26,7 +26,7 @@ x = BigArray(Int8).new
 4_000_000_000.times { x << 0 }
 ```
 
-Note that the equivalent program with `Array` would overflow:
+Note that the equivalent program using Array would have overflowed:
 
 ```crystal
 x = Array(Int8).new
