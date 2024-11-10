@@ -1,0 +1,9 @@
+name: big-types
+version: 0.1.0
+
+authors:
+  - Philipp Claßen <philipp.classen@posteo.de>
+
+crystal: '>= 1.13.1'
+
+license: MIT
