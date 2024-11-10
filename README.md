@@ -60,7 +60,7 @@ x = BigSet(Int64).new
 p! x.size
 ```
 
-And the requivalent to `Hash` is `BigHash`:
+And, finally, the equivalent to `Hash` is `BigHash`:
 
 ```crystal
 require "big-types/big_hash"
