@@ -3,7 +3,8 @@
 Provides data structures that serve as drop-in replacements for Array, Hash, and Set.
 Unlike the standard types, these structures support sizes that exceed 32-bit indices.
 
-The implementation is based on the standard library, with 32-bit integers replaced by 64-bit integers.
+The implementation is based on the Crystal standard library, with 32-bit integers
+replaced by 64-bit integers.
 
 ```crystal
 require "big-types"
@@ -35,7 +36,7 @@ x = BigArray(Int8).new
 p! x.size
 ```
 
-Note that the equivalent program using Array would have overflowed:
+Note that the equivalent program using standard `Array` would have overflowed:
 
 ```crystal
 x = Array(Int8).new
