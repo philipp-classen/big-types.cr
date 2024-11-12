@@ -216,7 +216,7 @@ class BigHash(K, V)
   # a hash will hold is known, the hash should be initialized with that
   # capacity for improved performance. Otherwise, the default is 8.
   # Inputs lower than 8 are ignored.
-  def initialize(block : (Hash(K, V), K -> V)? = nil, *, initial_capacity = nil)
+  def initialize(block : (BigHash(K, V), K -> V)? = nil, *, initial_capacity = nil)
     initial_capacity = (initial_capacity || 0_u64).to_u64
 
     # Same as the empty hash case
@@ -293,7 +293,7 @@ class BigHash(K, V)
   # a hash will hold is known, the hash should be initialized with that
   # capacity for improved performance. Otherwise, the default is 8.
   # Inputs lower than 8 are ignored.
-  def self.new(initial_capacity = nil, &block : (Hash(K, V), K -> V))
+  def self.new(initial_capacity = nil, &block : (BigHash(K, V), K -> V))
     new block, initial_capacity: initial_capacity
   end
 
